@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | Metanoia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+        
+        <div class="login-header">
+            <a href="index.html" class="logo">
+                <img src="metanoia_logo.svg" alt="Metanoia">
+                <span>Metanoia</span>
+            </a>
+            <h1>Bienvenido de nuevo</h1>
+            <p>Ingresa a tu cuenta para ver tu portafolio</p>
+        </div>
+
+        <div class="login-box">
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" placeholder="tu@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="••••••••">
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" checked>
+                        Recordarme
+                    </label>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="login-btn">Iniciar Sesión</button>
+            </form>
+
+            <div class="divider">
+                <span>o continúa con</span>
+            </div>
+
+            <div class="social-login">
+                <button class="social-btn" onclick="handleLogin(event)">G</button>
+                <button class="social-btn" onclick="handleLogin(event)">🍎</button>
+                <button class="social-btn" onclick="handleLogin(event)">in</button>
+            </div>
+        </div>
+
+        <div class="login-footer">
+            ¿No tienes cuenta? <a href="#">Solicitar acceso</a>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>
