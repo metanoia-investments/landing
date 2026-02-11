@@ -38,6 +38,10 @@ nav.nav-visible {
 .logo span {
     font-size: 1.25rem;
     font-weight: 700;
+    background: linear-gradient(110deg, #f7e9b8 0%, #ecd49a 50%, #dfbf79 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav-links {
@@ -135,8 +139,8 @@ nav.nav-visible {
 
 .hero-logo-mark {
     width: min(340px, 58vw);
-    margin-top: 0.35rem;
-    margin-bottom: 2.3rem;
+    margin-top: -0.2rem;
+    margin-bottom: 2.85rem;
     opacity: 1;
 }
 
@@ -153,7 +157,10 @@ nav.nav-visible {
     line-height: 1.06;
     max-width: 920px;
     margin-bottom: 1.1rem;
-    color: #f3f7ff;
+    background: linear-gradient(110deg, #f7e9b8 0%, #ecd49a 50%, #dfbf79 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero h1 span {
@@ -556,7 +563,8 @@ footer {
     }
 
     .logo span {
-        display: none;
+        display: inline;
+        font-size: 1.15rem;
     }
 
     .nav-cta {
@@ -572,8 +580,8 @@ footer {
 
     .hero-logo-mark {
         width: min(220px, 62vw);
-        margin-top: 0.15rem;
-        margin-bottom: 1.8rem;
+        margin-top: -0.2rem;
+        margin-bottom: 2.15rem;
     }
 
     .hero h1 {
@@ -583,6 +591,21 @@ footer {
     .hero p {
         font-size: 0.95rem;
         margin-bottom: 1.9rem;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        max-width: 380px;
+        gap: 0.65rem;
+        flex-wrap: nowrap;
+    }
+
+    .hero .btn-primary,
+    .hero .btn-secondary {
+        min-width: 0;
+        flex: 1;
+        padding: 0.75rem 0.7rem;
+        font-size: 0.9rem;
     }
 
     .stats {
