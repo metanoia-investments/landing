@@ -19,10 +19,20 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(120deg, #1a4b86 0%, #2a67ad 100%);
+    background: #071832;
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(212, 232, 255, 0.35);
-    box-shadow: 0 10px 26px rgba(2, 10, 28, 0.42);
+    border-bottom: 1px solid rgba(150, 195, 255, 0.14);
+    box-shadow: none;
+    opacity: 0;
+    transform: translateY(-14px);
+    pointer-events: none;
+    transition: opacity 0.24s ease, transform 0.24s ease;
+}
+
+nav.nav-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .logo span {
@@ -73,7 +83,7 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10.5rem 5% 4.5rem;
+    padding: 3.2rem 5% 3.4rem;
     position: relative;
     overflow: hidden;
     background: #071832 !important;
@@ -125,7 +135,8 @@ nav {
 
 .hero-logo-mark {
     width: min(340px, 58vw);
-    margin-bottom: 1.25rem;
+    margin-top: 0.35rem;
+    margin-bottom: 2.3rem;
     opacity: 1;
 }
 
@@ -201,7 +212,7 @@ nav {
 .stats {
     display: flex;
     gap: 4rem;
-    margin-top: 5.2rem;
+    margin-top: 3.6rem;
     padding-top: 0;
 }
 
@@ -277,7 +288,9 @@ nav {
 /* Why Us Section */
 .why-us {
     padding: 8rem 5%;
-    background: #e9f0fa;
+    background: #071832;
+    border-top: 1px solid rgba(150, 195, 255, 0.14);
+    border-bottom: 1px solid rgba(150, 195, 255, 0.14);
 }
 
 .why-container {
@@ -291,6 +304,7 @@ nav {
     letter-spacing: -0.02em;
     margin-bottom: 3rem;
     text-align: center;
+    color: #f3f7ff;
 }
 
 .why-metrics {
@@ -317,7 +331,7 @@ nav {
 }
 
 .why-content p {
-    color: var(--text-muted);
+    color: #bfd0e7;
     font-size: 1.1rem;
     margin-bottom: 2rem;
     line-height: 1.8;
@@ -342,11 +356,12 @@ nav {
     gap: 1rem;
     margin-bottom: 1.25rem;
     font-size: 1rem;
+    color: #e8f1ff;
 }
 
 .feature-list li::before {
     content: '✓';
-    color: var(--accent);
+    color: #8fc2ff;
     font-weight: 700;
     font-size: 1.1rem;
     flex-shrink: 0;
@@ -359,11 +374,12 @@ nav {
 }
 
 .metric-card {
-    background: #f3f7fd;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(14, 38, 74, 0.88);
+    border: 1px solid rgba(150, 195, 255, 0.24);
     border-radius: 16px;
     padding: 2rem;
     text-align: center;
+    box-shadow: 0 12px 28px rgba(2, 10, 28, 0.25);
 }
 
 .metric-card:nth-child(2) {
@@ -381,7 +397,7 @@ nav {
 .metric-value {
     font-size: 2.25rem;
     font-weight: 700;
-    background: var(--gradient);
+    background: linear-gradient(120deg, #8ec3ff 0%, #d9ebff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -389,7 +405,7 @@ nav {
 
 .metric-label {
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: #bfd0e7;
     margin-top: 0.5rem;
 }
 
@@ -550,11 +566,14 @@ footer {
     }
 
     .hero {
-        padding-top: 7.6rem;
+        padding-top: 2.6rem;
+        padding-bottom: 2.8rem;
     }
 
     .hero-logo-mark {
         width: min(220px, 62vw);
+        margin-top: 0.15rem;
+        margin-bottom: 1.8rem;
     }
 
     .hero h1 {
@@ -569,7 +588,7 @@ footer {
     .stats {
         flex-direction: column;
         gap: 1.7rem;
-        margin-top: 3.3rem;
+        margin-top: 2.6rem;
     }
 
     .why-metrics {

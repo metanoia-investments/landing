@@ -28,7 +28,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-logo-mark" aria-hidden="true">
-            <img src="metanoia_logo.jpeg" alt="">
+            <img src="metanoia_logo.png" alt="">
         </div>
         <div class="hero-badge">
             <span>✨</span> Aceptando nuevos clientes para 2026
@@ -132,7 +132,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="metanoia_logo.jpeg" alt="Metanoia">
+                <img src="metanoia_logo.png" alt="Metanoia">
                 <span>Metanoia</span>
             </div>
             <ul class="footer-links">
@@ -164,6 +164,15 @@
         document.querySelectorAll('.scroll-reveal, .scroll-fade, .scroll-slide-left, .scroll-slide-right').forEach(el => {
             observer.observe(el);
         });
+
+        // Show nav only after user scrolls down
+        const nav = document.querySelector('nav');
+        const updateNavVisibility = () => {
+            if (!nav) return;
+            nav.classList.toggle('nav-visible', window.scrollY > 90);
+        };
+        updateNavVisibility();
+        window.addEventListener('scroll', updateNavVisibility, { passive: true });
 
         // Reveal hero stats immediately after brief delay
         setTimeout(() => {
