@@ -9,6 +9,7 @@ body.login-page {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    background-color: #f5f7fa;
 }
 
 body.login-page::before {
@@ -18,8 +19,8 @@ body.login-page::before {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 30% 30%, rgba(201, 169, 98, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 70% 70%, rgba(201, 169, 98, 0.03) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 30%, rgba(52, 152, 219, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(52, 152, 219, 0.03) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -61,8 +62,8 @@ body.login-page::before {
 }
 
 .login-box {
-    background: var(--secondary);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     padding: 2rem;
 }
@@ -79,7 +80,7 @@ body.login-page::before {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--text-muted);
+    color: #6c757d;
     cursor: pointer;
 }
 
@@ -91,13 +92,13 @@ body.login-page::before {
 }
 
 .forgot-password {
-    color: var(--accent);
+    color: #3498db;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .forgot-password:hover {
-    color: var(--accent-light);
+    color: #2980b9;
 }
 
 .login-btn {
@@ -116,7 +117,7 @@ body.login-page::before {
 
 .login-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3);
+    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.3);
 }
 
 .login-btn:active {

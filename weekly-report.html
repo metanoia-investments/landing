@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Semanal | Metanoia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/report.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="index.html" class="logo">
+            <span>Metanoia</span>
+        </a>
+
+        <ul class="nav-menu">
+            <li>
+                <a href="dashboard.html">
+                    <span class="icon">📊</span>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">💼</span>
+                    Portafolio
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">📈</span>
+                    Mercados
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">🔄</span>
+                    Transacciones
+                </a>
+            </li>
+            <li>
+                <a href="weekly-report.html" class="active">
+                    <span class="icon">📄</span>
+                    Reportes
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">⚙️</span>
+                    Configuración
+                </a>
+            </li>
+        </ul>
+
+        <div class="user-profile">
+            <div class="user-avatar">JV</div>
+            <div class="user-info">
+                <div class="user-name">Juan Vera</div>
+                <div class="user-role">Cliente Premium</div>
+            </div>
+            <button class="logout-btn" onclick="window.location.href='login.html'" title="Cerrar sesión">⏻</button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="header no-print">
+            <div>
+                <h1>Reporte Semanal 📊</h1>
+                <p class="header-date">Semana del 27 de Enero - 2 de Febrero 2026</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary" onclick="exportToPDF()">Descargar PDF</button>
+                <button class="btn-primary" onclick="shareReport()">Compartir Reporte</button>
+            </div>
+        </header>
+
+        <!-- Summary Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <span class="stat-card-title">Rendimiento Semanal</span>
+                    <div class="stat-card-icon">📈</div>
+                </div>
+                <div class="stat-card-value">+2.8%</div>
+                <div class="stat-card-change positive">
+                    ↑ $79,412 ganancia
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <span class="stat-card-title">Volatilidad</span>
+                    <div class="stat-card-icon">📉</div>
+                </div>
+                <div class="stat-card-value">3.2%</div>
+                <div class="stat-card-change neutral">
+                    Moderada en rango
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <span class="stat-card-title">Posiciones Activas</span>
+                    <div class="stat-card-icon">💼</div>
+                </div>
+                <div class="stat-card-value">24</div>
+                <div class="stat-card-change positive">
+                    ↑ 3 nuevas esta semana
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <span class="stat-card-title">Diversificación</span>
+                    <div class="stat-card-icon">🎯</div>
+                </div>
+                <div class="stat-card-value">87%</div>
+                <div class="stat-card-change positive">
+                    Excelente balance
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Section -->
+        <section class="report-section">
+            <h2>Desempeño Detallado</h2>
+            <div class="report-grid">
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <h3>Activos de Mayor Rendimiento</h3>
+                        <span class="badge">TOP 5</span>
+                    </div>
+                    <table class="report-table">
+                        <thead>
+                            <tr>
+                                <th>Activo</th>
+                                <th>Cambio %</th>
+                                <th>Ganancia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tesla Inc. (TSLA)</td>
+                                <td class="positive">+5.2%</td>
+                                <td>$12,450</td>
+                            </tr>
+                            <tr>
+                                <td>Bitcoin (BTC)</td>
+                                <td class="positive">+4.8%</td>
+                                <td>$18,320</td>
+                            </tr>
+                            <tr>
+                                <td>Nvidia Corp (NVDA)</td>
+                                <td class="positive">+3.1%</td>
+                                <td>$9,840</td>
+                            </tr>
+                            <tr>
+                                <td>S&P 500 Index</td>
+                                <td class="positive">+2.4%</td>
+                                <td>$28,550</td>
+                            </tr>
+                            <tr>
+                                <td>Real Estate Fund</td>
+                                <td class="positive">+1.2%</td>
+                                <td>$10,252</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <h3>Distribución por Clase de Activo</h3>
+                        <span class="badge">PORTAFOLIO</span>
+                    </div>
+                    <div class="asset-allocation">
+                        <div class="allocation-item">
+                            <div class="allocation-label">
+                                <span class="label-name">Acciones</span>
+                                <span class="label-value">45%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%; background-color: var(--blue);"></div>
+                            </div>
+                        </div>
+                        <div class="allocation-item">
+                            <div class="allocation-label">
+                                <span class="label-name">Criptomonedas</span>
+                                <span class="label-value">25%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 25%; background-color: var(--accent);"></div>
+                            </div>
+                        </div>
+                        <div class="allocation-item">
+                            <div class="allocation-label">
+                                <span class="label-name">Bienes Raíces</span>
+                                <span class="label-value">18%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 18%; background-color: var(--purple);"></div>
+                            </div>
+                        </div>
+                        <div class="allocation-item">
+                            <div class="allocation-label">
+                                <span class="label-name">Bonos</span>
+                                <span class="label-value">12%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 12%; background-color: var(--green);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Insights -->
+        <section class="report-section">
+            <h2>Análisis de Mercado</h2>
+            <div class="insights-container">
+                <div class="insight-card positive">
+                    <div class="insight-icon">📈</div>
+                    <h4>Tendencia Alcista</h4>
+                    <p>Los mercados mostran fortaleza esta semana con el S&P 500 alcanzando nuevos máximos. La economía continúa siendo resiliente impulsada por datos de empleo positivos.</p>
+                </div>
+                <div class="insight-card neutral">
+                    <div class="insight-icon">⚡</div>
+                    <h4>Volatilidad Moderada</h4>
+                    <p>La volatilidad implícita ha disminuido un 0.8%, señalando mayor confianza en el mercado. Se espera que el comportamiento continúe estable en los próximos días.</p>
+                </div>
+                <div class="insight-card positive">
+                    <div class="insight-icon">💡</div>
+                    <h4>Oportunidades de Inversión</h4>
+                    <p>Identificamos oportunidades en el sector tecnológico y energías renovables. Recomendamos considerar aumentar exposición a estas áreas para diversificación.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Transactions -->
+        <section class="report-section">
+            <h2>Transacciones Recientes</h2>
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Tipo</th>
+                        <th>Activo</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>02 Feb 2026</td>
+                        <td><span class="badge-buy">COMPRA</span></td>
+                        <td>Bitcoin (BTC)</td>
+                        <td>0.5</td>
+                        <td>$42,500</td>
+                        <td>$21,250</td>
+                    </tr>
+                    <tr>
+                        <td>01 Feb 2026</td>
+                        <td><span class="badge-sell">VENTA</span></td>
+                        <td>Tesla Inc. (TSLA)</td>
+                        <td>50</td>
+                        <td>$245.30</td>
+                        <td>$12,265</td>
+                    </tr>
+                    <tr>
+                        <td>31 Ene 2026</td>
+                        <td><span class="badge-buy">COMPRA</span></td>
+                        <td>Nvidia Corp (NVDA)</td>
+                        <td>30</td>
+                        <td>$875.45</td>
+                        <td>$26,263.50</td>
+                    </tr>
+                    <tr>
+                        <td>30 Ene 2026</td>
+                        <td><span class="badge-dividend">DIVIDENDO</span></td>
+                        <td>S&P 500 Index</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>$845.50</td>
+                    </tr>
+                    <tr>
+                        <td>29 Ene 2026</td>
+                        <td><span class="badge-buy">COMPRA</span></td>
+                        <td>Fondo Inmobiliario</td>
+                        <td>100</td>
+                        <td>$152.80</td>
+                        <td>$15,280</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="report-section">
+            <h2>Recomendaciones de Nuestros Expertos</h2>
+            <div class="recommendations">
+                <div class="rec-item">
+                    <div class="rec-number">1</div>
+                    <div class="rec-content">
+                        <h4>Aumentar Exposición a Tecnología</h4>
+                        <p>Considerando el fortaleza del sector tech y las perspectivas positivas para 2026, recomendamos aumentar su posición en empresas líderes como NVDA y TSLA.</p>
+                    </div>
+                </div>
+                <div class="rec-item">
+                    <div class="rec-number">2</div>
+                    <div class="rec-content">
+                        <h4>Diversificar con Criptoactivos</h4>
+                        <p>Bitcoin ha mostrado correlación negativa con acciones, lo que la convierte en una buena cobertura. Sugerimos una posición del 5% del portafolio en activos cripto.</p>
+                    </div>
+                </div>
+                <div class="rec-item">
+                    <div class="rec-number">3</div>
+                    <div class="rec-content">
+                        <h4>Revisión de Posiciones de Bonos</h4>
+                        <p>Con tasas de interés estables, es buen momento para revisar la duración de su cartera de bonos y considerar instrumentos de mayor rendimiento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="report-footer">
+            <p>Reporte generado el 2 de Febrero de 2026. Todos los datos son en tiempo real. Para preguntas o más información, contacte a su gestor de cuenta.</p>
+            <p class="disclaimer">Aviso: Este reporte tiene fines informativos. No constituye asesoramiento financiero. Consulte con un asesor certificado antes de tomar decisiones de inversión.</p>
+        </footer>
+    </main>
+
+    <!-- PDF Export Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.1/jspdf.plugin.autotable.min.js"></script>
+    <script>
+        async function exportToPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'mm', 'a4');
+            const pageWidth = doc.internal.pageSize.getWidth();
+            const pageHeight = doc.internal.pageSize.getHeight();
+            const margin = 20;
+            let y = margin;
+
+            // Colors - Matched to Metanoia Logo Blue
+            const primary = [0, 82, 147];         // Logo blue
+            const primaryDark = [0, 62, 117];     // Darker blue
+            const primaryLight = [230, 242, 250]; // Light blue bg
+            const white = [255, 255, 255];
+            const black = [17, 24, 39];
+            const gray = [107, 114, 128];
+            const lightGray = [243, 244, 246];
+            const green = [22, 163, 74];
+            const red = [220, 38, 38];
+            const purple = [124, 58, 237];
+
+            // Load logo image
+            const logoImg = await loadImage('metanoia_logo.jpeg');
+
+            // Header - solid color matching logo background
+            doc.setFillColor(11, 23, 45);  // Dark navy matching logo
+            doc.rect(0, 0, pageWidth, 40, 'F');
+            
+            // Add logo
+            doc.addImage(logoImg, 'JPEG', margin, 8, 24, 24);
+            
+            doc.setTextColor(...white);
+            doc.setFontSize(22);
+            doc.setFont('helvetica', 'bold');
+            doc.text('METANOIA', margin + 28, 20);
+            
+            doc.setFontSize(9);
+            doc.setFont('helvetica', 'normal');
+            doc.text('Inversiones y Consultoría', margin + 28, 27);
+            
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Reporte Semanal', pageWidth - margin, 17, { align: 'right' });
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(10);
+            doc.text('27 Enero - 2 Febrero 2026', pageWidth - margin, 25, { align: 'right' });
+            doc.text('Cliente: Juan Vera', pageWidth - margin, 33, { align: 'right' });
+
+            y = 55;
+
+            // Summary Section Title
+            doc.setTextColor(...primary);
+            doc.setFontSize(14);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Resumen de la Semana', margin, y);
+            y += 10;
+
+            // Stats Cards
+            const cardWidth = (pageWidth - margin * 2 - 15) / 4;
+            const cardHeight = 28;
+            const stats = [
+                { title: 'Rendimiento', value: '+2.8%', sub: '+$79,412', color: green },
+                { title: 'Volatilidad', value: '3.2%', sub: 'Moderada', color: primary },
+                { title: 'Posiciones', value: '24', sub: '+3 nuevas', color: green },
+                { title: 'Diversificación', value: '87%', sub: 'Excelente', color: green }
+            ];
+
+            stats.forEach((stat, i) => {
+                const x = margin + i * (cardWidth + 5);
+                doc.setFillColor(...primaryLight);
+                doc.roundedRect(x, y, cardWidth, cardHeight, 3, 3, 'F');
+                
+                doc.setTextColor(...gray);
+                doc.setFontSize(8);
+                doc.text(stat.title, x + 5, y + 8);
+                
+                doc.setTextColor(...black);
+                doc.setFontSize(16);
+                doc.setFont('helvetica', 'bold');
+                doc.text(stat.value, x + 5, y + 18);
+                
+                doc.setTextColor(...stat.color);
+                doc.setFontSize(8);
+                doc.setFont('helvetica', 'normal');
+                doc.text(stat.sub, x + 5, y + 24);
+            });
+
+            y += cardHeight + 15;
+
+            // Top Performers Section
+            doc.setTextColor(...primary);
+            doc.setFontSize(14);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Activos de Mayor Rendimiento', margin, y);
+            y += 8;
+
+            doc.autoTable({
+                startY: y,
+                head: [['Activo', 'Cambio %', 'Ganancia']],
+                body: [
+                    ['Tesla Inc. (TSLA)', '+5.2%', '$12,450'],
+                    ['Bitcoin (BTC)', '+4.8%', '$18,320'],
+                    ['Nvidia Corp (NVDA)', '+3.1%', '$9,840'],
+                    ['S&P 500 Index', '+2.4%', '$28,550'],
+                    ['Real Estate Fund', '+1.2%', '$10,252']
+                ],
+                theme: 'striped',
+                styles: {
+                    fillColor: white,
+                    textColor: black,
+                    fontSize: 9,
+                    cellPadding: 4
+                },
+                headStyles: {
+                    fillColor: primary,
+                    textColor: white,
+                    fontStyle: 'bold',
+                    fontSize: 8
+                },
+                alternateRowStyles: {
+                    fillColor: lightGray
+                },
+                columnStyles: {
+                    1: { textColor: green, halign: 'center', fontStyle: 'bold' },
+                    2: { halign: 'right' }
+                },
+                margin: { left: margin, right: margin }
+            });
+
+            y = doc.lastAutoTable.finalY + 15;
+
+            // Portfolio Distribution
+            doc.setTextColor(...primary);
+            doc.setFontSize(14);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Distribución del Portafolio', margin, y);
+            y += 10;
+
+            const allocations = [
+                { name: 'Acciones', pct: 45, color: primary },
+                { name: 'Criptomonedas', pct: 25, color: [251, 146, 60] },
+                { name: 'Bienes Raíces', pct: 18, color: purple },
+                { name: 'Bonos', pct: 12, color: green }
+            ];
+
+            allocations.forEach((item, i) => {
+                const barY = y + i * 12;
+                
+                doc.setTextColor(...black);
+                doc.setFontSize(9);
+                doc.text(item.name, margin, barY + 3);
+                
+                doc.setTextColor(...primary);
+                doc.setFont('helvetica', 'bold');
+                doc.text(item.pct + '%', margin + 40, barY + 3);
+                doc.setFont('helvetica', 'normal');
+                
+                // Progress bar background
+                doc.setFillColor(...lightGray);
+                doc.roundedRect(margin + 55, barY - 2, 100, 6, 2, 2, 'F');
+                
+                // Progress bar fill
+                doc.setFillColor(...item.color);
+                doc.roundedRect(margin + 55, barY - 2, item.pct * 1, 6, 2, 2, 'F');
+            });
+
+            y += 60;
+
+            // Page 2
+            doc.addPage();
+            y = margin;
+
+            // Recent Transactions
+            doc.setTextColor(...primary);
+            doc.setFontSize(14);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Transacciones Recientes', margin, y);
+            y += 2;
+
+            doc.autoTable({
+                startY: y,
+                head: [['Fecha', 'Tipo', 'Activo', 'Total']],
+                body: [
+                    ['02 Feb', 'COMPRA', 'Bitcoin (BTC)', '$21,250'],
+                    ['01 Feb', 'VENTA', 'Tesla Inc. (TSLA)', '$12,265'],
+                    ['31 Ene', 'COMPRA', 'Nvidia Corp (NVDA)', '$26,263'],
+                    ['30 Ene', 'DIVIDENDO', 'S&P 500 Index', '$845'],
+                    ['29 Ene', 'COMPRA', 'Fondo Inmobiliario', '$15,280']
+                ],
+                theme: 'striped',
+                styles: {
+                    fillColor: white,
+                    textColor: black,
+                    fontSize: 9,
+                    cellPadding: 4
+                },
+                headStyles: {
+                    fillColor: primary,
+                    textColor: white,
+                    fontStyle: 'bold',
+                    fontSize: 8
+                },
+                alternateRowStyles: {
+                    fillColor: lightGray
+                },
+                columnStyles: {
+                    3: { halign: 'right' }
+                },
+                didParseCell: function(data) {
+                    if (data.column.index === 1 && data.section === 'body') {
+                        if (data.cell.raw === 'COMPRA') data.cell.styles.textColor = green;
+                        else if (data.cell.raw === 'VENTA') data.cell.styles.textColor = red;
+                        else if (data.cell.raw === 'DIVIDENDO') data.cell.styles.textColor = purple;
+                    }
+                },
+                margin: { left: margin, right: margin }
+            });
+
+            y = doc.lastAutoTable.finalY + 15;
+
+            // Recommendations
+            doc.setTextColor(...primary);
+            doc.setFontSize(14);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Recomendaciones de Nuestros Expertos', margin, y);
+            y += 12;
+
+            const recommendations = [
+                { num: '1', title: 'Aumentar Exposición a Tecnología', desc: 'Considerando la fortaleza del sector tech y las perspectivas positivas para 2026, recomendamos aumentar su posición en empresas líderes como NVDA y TSLA.' },
+                { num: '2', title: 'Diversificar con Criptoactivos', desc: 'Bitcoin ha mostrado correlación negativa con acciones, convirtiéndola en una buena cobertura. Sugerimos una posición del 5% del portafolio.' },
+                { num: '3', title: 'Revisión de Bonos', desc: 'Con tasas de interés estables, es buen momento para revisar la duración de su cartera de bonos y considerar instrumentos de mayor rendimiento.' }
+            ];
+
+            recommendations.forEach((rec, i) => {
+                doc.setFillColor(...primaryLight);
+                doc.roundedRect(margin, y, pageWidth - margin * 2, 28, 3, 3, 'F');
+                
+                // Number circle
+                doc.setFillColor(...primary);
+                doc.circle(margin + 10, y + 14, 6, 'F');
+                doc.setTextColor(...white);
+                doc.setFontSize(12);
+                doc.setFont('helvetica', 'bold');
+                doc.text(rec.num, margin + 10, y + 14.5, { align: 'center', baseline: 'middle' });
+                
+                // Title
+                doc.setTextColor(...black);
+                doc.setFontSize(11);
+                doc.text(rec.title, margin + 22, y + 10);
+                
+                // Description
+                doc.setTextColor(...gray);
+                doc.setFontSize(8);
+                doc.setFont('helvetica', 'normal');
+                const lines = doc.splitTextToSize(rec.desc, pageWidth - margin * 2 - 30);
+                doc.text(lines, margin + 22, y + 18);
+                
+                y += 35;
+            });
+
+            y += 20;
+
+            // Market Analysis
+            doc.setTextColor(...primary);
+            doc.setFontSize(14);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Análisis de Mercado', margin, y);
+            y += 12;
+
+            const insights = [
+                { title: 'Tendencia Alcista', desc: 'Los mercados mostraron fortaleza esta semana con el S&P 500 alcanzando nuevos máximos históricos.', color: green },
+                { title: 'Volatilidad Moderada', desc: 'La volatilidad implícita disminuyó 0.8%, señalando mayor confianza en el mercado.', color: primary },
+                { title: 'Oportunidades', desc: 'Identificamos oportunidades en el sector tecnológico y energías renovables.', color: green }
+            ];
+
+            const insightWidth = (pageWidth - margin * 2 - 10) / 3;
+            insights.forEach((ins, i) => {
+                const x = margin + i * (insightWidth + 5);
+                
+                doc.setFillColor(...lightGray);
+                doc.roundedRect(x, y, insightWidth, 45, 3, 3, 'F');
+                
+                // Colored left border
+                doc.setFillColor(...ins.color);
+                doc.rect(x, y + 3, 2, 39, 'F');
+                
+                doc.setTextColor(...black);
+                doc.setFontSize(10);
+                doc.setFont('helvetica', 'bold');
+                doc.text(ins.title, x + 8, y + 12);
+                
+                doc.setTextColor(...gray);
+                doc.setFontSize(8);
+                doc.setFont('helvetica', 'normal');
+                const lines = doc.splitTextToSize(ins.desc, insightWidth - 15);
+                doc.text(lines, x + 8, y + 22);
+            });
+
+
+
+            // Save
+            doc.save('Reporte_Semanal_Metanoia_' + new Date().toISOString().split('T')[0] + '.pdf');
+        }
+
+        // Helper function to load image as base64
+        function loadImage(url) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.crossOrigin = 'anonymous';
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                    resolve(canvas.toDataURL('image/jpeg'));
+                };
+                img.onerror = reject;
+                img.src = url;
+            });
+        }
+
+        function shareReport() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Reporte Semanal - Metanoia',
+                    text: 'Mi reporte semanal de inversiones de Metanoia',
+                    url: window.location.href
+                }).catch(console.error);
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('Enlace copiado al portapapeles');
+                }).catch(() => {
+                    alert('No se pudo copiar el enlace');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
