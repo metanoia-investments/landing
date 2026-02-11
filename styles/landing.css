@@ -477,7 +477,10 @@ footer {
 .footer-logo span {
     font-weight: 600;
     font-size: 1.1rem;
-    color: #ffffff;
+    background: linear-gradient(110deg, #f7e9b8 0%, #ecd49a 50%, #dfbf79 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .footer-links {
